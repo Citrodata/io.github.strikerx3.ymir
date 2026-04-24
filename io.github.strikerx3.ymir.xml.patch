@@ -7,7 +7,7 @@ index fd1bff14..2cef4e4d 100644
    </provides>
    <releases>
 -    <release version="0.3.0" date="20XX-XX-XX">
-+    <release version="0.3.0" date="20XX-04-24">
++    <release version="0.3.0" date="2026-04-24">
        <description/>
        <url>https://github.com/StrikerX3/Ymir/releases/tag/v0.3.0</url>
      </release>
