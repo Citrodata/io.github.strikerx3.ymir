@@ -99,8 +99,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/catchorg/Catch2.git
-        tag: v3.11.0
-        commit: b3fb4b9feafcd8d91c5cb510a4775143fdbef02f
+        tag: v3.14.0
+        commit: b670de4fe12ac7c5e858b7de3a14fb4bd18c760e
   - name: curl
     buildsystem: cmake
     build-options:
@@ -114,8 +114,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/curl/curl.git
-        tag: curl-8_16_0
-        commit: 11b991232fbcaa88e2b1faecac224416b0001e35
+        tag: curl-8_19_0
+        commit: 8c908d2d0a6d32abdedda2c52e90bd56ec76c24d
   - name: semver
     buildsystem: cmake
     build-options:
@@ -156,8 +156,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/ngtcp2/ngtcp2.git
-        tag: v1.16.0
-        commit: 570771692c2db0601bafdd31f7f588ca626fa92d
+        tag: v1.22.1
+        commit: 716e64b05f4a3709dfc0b0522cf9fd4456d055e5
   - name: nghttp3
     buildsystem: cmake
     build-options:
@@ -170,8 +170,27 @@ modules:
     sources:
       - type: git
         url: https://github.com/ngtcp2/nghttp3.git
-        tag: v1.12.0
-        commit: 8e3523d04bec12cc1fbfd6018d2dc0ef4210148d
+        tag: v1.15.0
+        commit: d326f4c1eb3f6a780d77793b30e16756c498f913
+  - name: zstd
+    buildsystem: simple
+    build-options:
+      append-path: /usr/lib/sdk/llvm21/bin
+      prepend-ld-library-path: /usr/lib/sdk/llvm21/lib
+    config-opts:
+      - -D CMAKE_C_COMPILER=clang
+      - -D CMAKE_CXX_COMPILER=clang++
+      - -D CMAKE_BUILD_TYPE=Release
+    build-commands:
+      - mkdir build/cmake/builddir
+      - cmake -D CMAKE_C_COMPILER=clang -D CMAKE_CXX_COMPILER=clang++ -D CMAKE_BUILD_TYPE=Release -B build/cmake/builddir -S build/cmake/
+      - cmake --build build/cmake/builddir --parallel
+      - cmake --install build/cmake/builddir --config Release --prefix=/app/
+    sources:
+      - type: git
+        url: https://github.com/facebook/zstd
+        tag: v1.5.7
+        commit: f8745da6ff1ad1e7bab384bd1f9d742439278e99
   - name: ymir
     buildsystem: cmake-ninja
     build-options:
@@ -209,8 +228,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/StrikerX3/Ymir.git
-        tag: v0.2.1
-        commit: a20ea6cfb212ff91efedc12c751fb6cf5de65a7b
+        tag: v0.3.0
+        commit: 922858ce022f8b6b413f7524a4b91fd73e6c7a88
         x-checker-data:
           type: json
           url: https://api.github.com/repos/StrikerX3/ymir/releases/latest
@@ -218,4 +237,4 @@ modules:
           tag-query: .tag_name
           timestamp-query: .published_at
       - type: patch
-        path: fix-appdata.patch
+        path: io.github.strikerx3.ymir.xml.patch
