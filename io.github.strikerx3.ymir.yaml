@@ -191,6 +191,20 @@ modules:
         url: https://github.com/facebook/zstd
         tag: v1.5.7
         commit: f8745da6ff1ad1e7bab384bd1f9d742439278e99
+  - name: miniz
+    buildsystem: cmake
+    build-options:
+      append-path: /usr/lib/sdk/llvm21/bin
+      prepend-ld-library-path: /usr/lib/sdk/llvm21/lib
+    config-opts:
+      - -D CMAKE_C_COMPILER=clang
+      - -D CMAKE_CXX_COMPILER=clang++
+      - -D CMAKE_BUILD_TYPE=Release
+    sources:
+      - type: git
+        url: https://github.com/richgel999/miniz
+        tag: 3.1.1
+        commit: d10b03cc73475af673df40f06e5cefd1d5f940d9
   - name: ymir
     buildsystem: cmake-ninja
     build-options:
