@@ -242,7 +242,6 @@ modules:
       - /share/doc
       - /share/cmake
       - /include/
-      - /lib/debug/
     sources:
       - type: git
         url: https://github.com/StrikerX3/Ymir.git
