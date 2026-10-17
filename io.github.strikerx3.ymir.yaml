@@ -49,7 +49,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/HowardHinnant/date.git
-        commit: a5db3aecec580bc78b6c01c118f2628676769b69
+        commit: 179a6b921ccd6179b5b04dce812a89f71a51b4df
   - name: rtmidi
     buildsystem: cmake
     build-options:
@@ -62,8 +62,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/thestk/rtmidi.git
-        tag: 6.0.0
-        commit: 1e5b49925aa60065db52de44c366d446a902547b
+        tag: 6.1.0
+        commit: 7e31b5bfcc9350058fbaf81d62a8eb39dd29c5f7
   - name: stb
     buildsystem: cmake
     sources:
@@ -99,8 +99,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/catchorg/Catch2.git
-        tag: v3.14.0
-        commit: b670de4fe12ac7c5e858b7de3a14fb4bd18c760e
+        tag: v3.16.1
+        commit: 08092139210881f01a34e60c5f2fd6afa0ea4024
   - name: curl
     buildsystem: cmake
     build-options:
@@ -114,8 +114,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/curl/curl.git
-        tag: curl-8_19_0
-        commit: 8c908d2d0a6d32abdedda2c52e90bd56ec76c24d
+        tag: curl-8_23_0
+        commit: 3163ec065643ba20709f190111f42c3e1fe95273
   - name: semver
     buildsystem: cmake
     build-options:
@@ -156,8 +156,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/ngtcp2/ngtcp2.git
-        tag: v1.22.1
-        commit: 716e64b05f4a3709dfc0b0522cf9fd4456d055e5
+        tag: v1.25.0
+        commit: f9e9ff01ad2c8116bc09de4f644b0028a61486a6
   - name: nghttp3
     buildsystem: cmake
     build-options:
@@ -170,8 +170,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/ngtcp2/nghttp3.git
-        tag: v1.15.0
-        commit: d326f4c1eb3f6a780d77793b30e16756c498f913
+        tag: v1.18.0
+        commit: dbfc24286138cb0b6490160e7ca87fe1ce6722a0
   - name: zstd
     buildsystem: simple
     build-options:
@@ -203,8 +203,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/richgel999/miniz
-        tag: 3.1.1
-        commit: d10b03cc73475af673df40f06e5cefd1d5f940d9
+        tag: 3.1.2
+        commit: 77d0dce8627735138c51770d1799a1ef48f2117d
   - name: ymir
     buildsystem: cmake-ninja
     build-options:
@@ -245,8 +245,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/StrikerX3/Ymir.git
-        tag: v0.3.3
-        commit: 54fead6a0001d3e4b6741a8d095ee8342266c3dc
+        tag: v0.4.0
+        commit: 25cd2c2d2bf994d43872e2b3776cd4cf7912387e
         x-checker-data:
           type: json
           url: https://api.github.com/repos/StrikerX3/ymir/releases/latest
